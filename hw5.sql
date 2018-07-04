@@ -27,10 +27,10 @@
 
 /*5. #prods whose price is between $250.00 and $400.00. */
 /*(a) using intersect. */
-	(SELECT prod_id FROM Product WHERE price >250.00) INTERSECT ( SELECT prod_id FROM Product WHERE price < 400.00);
+	(SELECT prod_id FROM Product WHERE price >=250.00) INTERSECT ( SELECT prod_id FROM Product WHERE price <= 400.00);
 
 /*(b) without intersect. */
-	SELECT prod_id FROM Product WHERE price >250.00 AND price <400.00;
+	SELECT prod_id FROM Product WHERE price >=250.00 AND price <=400.00;
 
 /*6. How many products are out of stock? */
 	SELECT COUNT(*) FROM Stock WHERE quantity<=0;
